@@ -1,0 +1,17 @@
+Feature: Registro de un usuario nuevo
+
+  Scenario 1: Registro de cuenta por formulario exitoso
+    Given el usuario desea registrarse en la plataforma
+      And se encuentra en el apartado de “Registrarse”
+    When complete el formulario de registro con su información personal:
+    Then la cuenta se creará exitosamente
+    Examples:
+      | nombre    | correo               | clave     | rol      |
+      | Pedro     | pedro@mail.com       | Pedro123  | Granjero |
+      | Lucia     | lucia@mail.com       | Lucia123  | Asesor   |
+
+  Scenario 2: Registro incorrecto de cuenta
+    Given el usuario se encuentra en el apartado de “Registrarse”
+    When ingrese los datos erróneamente:
+    Then la cuenta no se creará
+      And recibirá un mensaje indicando el error
