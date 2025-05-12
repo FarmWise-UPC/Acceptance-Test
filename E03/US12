@@ -1,0 +1,24 @@
+Feature: Modificar perfil de usuario
+
+  Scenario 1: Modificación de datos de perfil exitosa
+    Given el usuario desea modificar los datos de su perfil.
+    When ingrese a la sección de Perfil del menú
+      And llene los campos sobre los que desea modificar
+    Then se verificará los datos ingresados. 
+      And el sistema actualizará los datos del perfil.
+    Examples:
+      | uid | campo      | valor            |
+      | 1   | firstname  | Juan Carlos      |
+      | 1   | city       | Arequipa         |
+      | 1   | occupation | Agrónomo         |
+
+  Scenario 2: Modificación de datos de perfil fallida
+    Given el usuario desea modificar los datos de su perfil
+    When ingrese a la sección de Perfil del menú
+      And llene los campos sobre los que desea modificar
+    Then se verificará los datos ingresados
+      And el sistema mostrará un mensaje de error indicando el dato erróneo.
+    Examples:
+      | uid | campo     | valor         | mensaje                              |
+      | 1   | birthdate | 32-13-2023    | Fecha de nacimiento inválida         |
+      | 1   | photo     | archivo.exe   | Formato de imagen no soportado       |
