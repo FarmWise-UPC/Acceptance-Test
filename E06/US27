@@ -1,0 +1,11 @@
+Feature: Organización en capas con Domain Driven Design
+
+  Scenario 1: El equipo de desarrollo implementa correctamente la organización por capas
+    Given el equipo de desarrollo implementa el sistema respetando las capas de infraestructura, interface, aplicación y dominio
+    When se realiza una modificación en la lógica de negocio
+    Then el cambio se efectúa exclusivamente en la capa de dominio sin afectar las demás capas del sistema
+
+  Scenario 2: El equipo de desarrollo no implementa correctamente la organización por capas
+    Given el sistema fue desarrollado sin una separación clara de capas
+    When se intenta modificar una regla de negocio
+    Then el cambio afecta también componentes de presentación e infraestructura, causando errores colaterales y dificultad de mantenimiento
