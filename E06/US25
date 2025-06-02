@@ -1,0 +1,11 @@
+Feature: Autenticación y autorización utilizando tokens JWT
+
+  Scenario: El usuario inicia sesión y se le permite hacer uso de las funcionalidades a las que tiene permiso.
+    Given el usuario accede al formulario de inicio de sesión.
+    When ingresa sus credenciales válidas.
+    Then el sistema genera un token JWT, lo guarda de forma segura y permite el acceso según su rol.
+
+  Scenario: El usuario no puede hacer uso de las funcionalidades a las que no tiene permiso.
+    Given un usuario intenta acceder a una funcionalidad restringida.
+    When no presenta un token válido o tiene un rol inadecuado.
+    Then el sistema deniega el acceso e informa que no tiene los permisos necesarios.
