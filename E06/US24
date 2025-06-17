@@ -1,0 +1,11 @@
+Feature: Interfaz gráfica intuitiva y fácil de usar
+
+  Scenario: El usuario logra navegar en la aplicación y usarla de manera fluida y sencilla
+    Given el usuario accede por primera vez a la aplicación
+    When navega por la sección de agendamiento de citas
+    Then comprende de inmediato los pasos a seguir gracias al diseño visual y al flujo guiado
+
+  Scenario: El usuario navega y usa la aplicación con dificultades
+    Given un usuario nuevo intenta usar la aplicación
+    When no encuentra cómo agendar una cita debido a opciones poco visibles o confusas
+    Then abandona la tarea sin completar el proceso, lo que genera frustración y posibles pérdidas de usuarios
