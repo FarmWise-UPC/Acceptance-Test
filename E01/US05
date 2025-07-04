@@ -1,0 +1,15 @@
+Feature: Calificación del asesor luego de una cita
+
+Scenario 1: Calificar al asesor
+  Given el granjero con poca experiencia desea hacer un feedback referente al servicio del asesor.
+    And se encuentra en la vista de historial de asesorías.
+    And selecciona una asesoría sin reseña.
+  When haga clic en el botón “Calificar” en la interfaz.
+  Then el sistema le permitirá asignarle un número de estrellas y comentar el servicio del asesor.
+
+Scenario 2: Omitir Calificación
+  Given el granjero con poca experiencia no desea dar feedback al asesor referente al servicio.
+    And se encuentra en la vista de historial de asesorías.
+    And selecciona una asesoría sin reseña.
+  When haga clic en el botón “Regresar” en la interfaz.
+  Then el sistema le permitirá omitir la reseña.
