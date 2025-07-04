@@ -1,0 +1,15 @@
+Feature: Cancelación de citas
+
+Scenario 1: Cancelación de una cita
+  Given el usuario tiene una cita programada
+    And desea cancelarla.
+  When selecciona la cita del listado de citas.
+    And selecciona la opción para cancelar la cita.
+  Then el sistema cancelará la cita y notificará al usuario y al asesor sobre el cambio.
+
+Scenario 1: Error al cancelar una cita
+  Given el usuario tiene una cita programada
+    And desea cancelarla.
+  When selecciona la cita del listado de citas.
+    And selecciona la opción para cancelar la cita.
+  Then el sistema mostrará un mensaje de error si no se puede completar la cancelación.
