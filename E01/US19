@@ -1,0 +1,12 @@
+Feature: Visualización de historial de citas
+
+Scenario 1: Acceso al historial de citas
+  Given el usuario está en la sección de perfil de su cuenta.
+  When selecciona la opción para ver el historial de citas.
+  Then podrá ver una lista de todas las citas anteriores, incluyendo fechas, horas y detalles de las reuniones
+
+Scenario 2: Fallo al acceder al historial de citas
+  Given el usuario está en la sección de perfil de su cuenta.
+  When selecciona la opción para ver el historial de citas
+    And ocurre un error en la carga de datos.
+  Then se mostrará un mensaje de error indicando que no se pudo cargar el historial.
