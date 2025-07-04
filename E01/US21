@@ -1,0 +1,12 @@
+Feature: Búsqueda y filtrado de citas
+
+Scenario 1: Búsqueda de citas
+  Given el usuario está en la sección de citas de la plataforma.
+  When se elija la fecha a filtrar para la cita
+  Then el sistema mostrará una lista de citas que coincidan con la fecha elegida.
+
+Scenario 2: Fallo al buscar citas
+  Given el usuario está en la sección de citas de la plataforma.
+  When se elija la fecha a filtrar para la cita
+    And ocurre un error en la búsqueda.
+  Then el sistema mostrará un mensaje indicando que no se pudieron obtener las citas.
