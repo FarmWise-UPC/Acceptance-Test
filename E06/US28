@@ -1,0 +1,19 @@
+Feature: Integración de Eureka con API Gateway y balanceo de carga
+
+  Scenario 1: Registro de múltiples instancias
+    Given que he desplegado varias instancias de un microservicio
+    And cada instancia está registrada en Eureka
+    Then Eureka debe mostrar todas las instancias activas como disponibles
+
+  Scenario 2: Enrutamiento a través del Gateway
+    Given que el API Gateway está registrado en Eureka
+    And el microservicio tiene múltiples instancias registradas
+    When un cliente realiza múltiples solicitudes al Gateway
+    Then el Gateway debe distribuir las solicitudes entre las distintas instancias
+
+  Scenario 3: Tolerancia a fallos ante caída de una instancia
+    Given que una de las instancias deja de responder
+    And las demás instancias siguen activas en Eureka
+    When el Gateway detecta un fallo en la instancia caída
+    Then debe excluirla temporalmente del ruteo
+    And enrutar las siguientes solicitudes a las otras instancias disponibles
